@@ -16,15 +16,15 @@ module.exports = {
         const { cdempresa, tp_analise } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT ANALISE_CLIENTES.ID AS id, ANALISE_CLIENTES.CDEMPRESA AS cdempresa, ';
-        qry = qry +   'ANALISE_CLIENTES.TP_ANALISE AS tp_analise, ANALISE_CLIENTES.DS_REGIAO AS ds_regiao, ';
-        qry = qry +   'ANALISE_CLIENTES.QT_VDA_MES AS qt_vda_mes, ANALISE_CLIENTES.QT_NOVOS AS qt_novos, ANALISE_CLIENTES.QT_RECUPER AS qt_recuper, ';
-        qry = qry +   'ANALISE_CLIENTES.QT_ATIVOS AS qt_ativos, ANALISE_CLIENTES.QT_ATIVOS_180 AS qt_ativos_180, ANALISE_CLIENTES.QT_SEMVDA_90 AS qt_semvda_90, ';
-        qry = qry +   'ANALISE_CLIENTES.DT_ANALISE AS dt_analise, ANALISE_CLIENTES.HR_ANALISE AS hr_analise ';
-        qry = qry + 'FROM ANALISE_CLIENTES ';
-        qry = qry + 'WHERE ANALISE_CLIENTES.CDEMPRESA = "' + cdempresa + '" ';
-        qry = qry +   'AND ANALISE_CLIENTES.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND ANALISE_CLIENTES.DS_REGIAO <> "' + tp_analise + '"';
+        qry = qry + 'SELECT analise_clientes.ID AS id, analise_clientes.CDEMPRESA AS cdempresa, ';
+        qry = qry +   'analise_clientes.TP_ANALISE AS tp_analise, analise_clientes.DS_REGIAO AS ds_regiao, ';
+        qry = qry +   'analise_clientes.QT_VDA_MES AS qt_vda_mes, analise_clientes.QT_NOVOS AS qt_novos, analise_clientes.QT_RECUPER AS qt_recuper, ';
+        qry = qry +   'analise_clientes.QT_ATIVOS AS qt_ativos, analise_clientes.QT_ATIVOS_180 AS qt_ativos_180, analise_clientes.QT_SEMVDA_90 AS qt_semvda_90, ';
+        qry = qry +   'analise_clientes.DT_ANALISE AS dt_analise, analise_clientes.HR_ANALISE AS hr_analise ';
+        qry = qry + 'FROM analise_clientes ';
+        qry = qry + 'WHERE analise_clientes.CDEMPRESA = "' + cdempresa + '" ';
+        qry = qry +   'AND analise_clientes.TP_ANALISE = "' + tp_analise + '" ';
+        qry = qry +   'AND analise_clientes.DS_REGIAO <> "' + tp_analise + '"';
 
         const analise_clientes = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }
@@ -38,15 +38,15 @@ module.exports = {
         const { cdempresa, tp_analise, ds_regiao } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT ANALISE_CLIENTES.ID AS id, ANALISE_CLIENTES.CDEMPRESA AS cdempresa, ';
-        qry = qry +   'ANALISE_CLIENTES.TP_ANALISE AS tp_analise, ANALISE_CLIENTES.DS_REGIAO AS ds_regiao, ';
-        qry = qry +   'ANALISE_CLIENTES.QT_VDA_MES AS qt_vda_mes, ANALISE_CLIENTES.QT_NOVOS AS qt_novos, ANALISE_CLIENTES.QT_RECUPER AS qt_recuper, ';
-        qry = qry +   'ANALISE_CLIENTES.QT_ATIVOS AS qt_ativos, ANALISE_CLIENTES.QT_ATIVOS_180 AS qt_ativos_180, ANALISE_CLIENTES.QT_SEMVDA_90 AS qt_semvda_90, ';
-        qry = qry +   'ANALISE_CLIENTES.DT_ANALISE AS dt_analise, ANALISE_CLIENTES.HR_ANALISE AS hr_analise ';
-        qry = qry + 'FROM ANALISE_CLIENTES ';
-        qry = qry + 'WHERE ANALISE_CLIENTES.CDEMPRESA = "' + cdempresa + '" ';
-        qry = qry +   'AND ANALISE_CLIENTES.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND ANALISE_CLIENTES.DS_REGIAO = "' + ds_regiao + '"';
+        qry = qry + 'SELECT analise_clientes.ID AS id, analise_clientes.CDEMPRESA AS cdempresa, ';
+        qry = qry +   'analise_clientes.TP_ANALISE AS tp_analise, analise_clientes.DS_REGIAO AS ds_regiao, ';
+        qry = qry +   'analise_clientes.QT_VDA_MES AS qt_vda_mes, analise_clientes.QT_NOVOS AS qt_novos, analise_clientes.QT_RECUPER AS qt_recuper, ';
+        qry = qry +   'analise_clientes.QT_ATIVOS AS qt_ativos, analise_clientes.QT_ATIVOS_180 AS qt_ativos_180, analise_clientes.QT_SEMVDA_90 AS qt_semvda_90, ';
+        qry = qry +   'analise_clientes.DT_ANALISE AS dt_analise, analise_clientes.HR_ANALISE AS hr_analise ';
+        qry = qry + 'FROM analise_clientes ';
+        qry = qry + 'WHERE analise_clientes.CDEMPRESA = "' + cdempresa + '" ';
+        qry = qry +   'AND analise_clientes.TP_ANALISE = "' + tp_analise + '" ';
+        qry = qry +   'AND analise_clientes.DS_REGIAO = "' + ds_regiao + '"';
 
         const analise_clientes = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }
