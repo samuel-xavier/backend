@@ -16,11 +16,11 @@ module.exports = {
         const { cdempresa } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT GRPITENS.ID AS id, GRPITENS.CDEMPRESA AS cdempresa, ';
-        qry = qry +   'GRPITENS.CDGRPITEM AS cdgrpitem, GRPITENS.DSGRPITEM AS dsgrpitem, ';
-        qry = qry +   'GRPITENS.URI AS uri, GRPITENS.URIDET AS uridet ';
-        qry = qry + 'FROM GRPITENS ';
-        qry = qry + 'WHERE GRPITENS.CDEMPRESA = ' + cdempresa;
+        qry = qry + 'SELECT grpitens.ID AS id, grpitens.CDEMPRESA AS cdempresa, ';
+        qry = qry +   'grpitens.CDGRPITEM AS cdgrpitem, grpitens.DSGRPITEM AS dsgrpitem, ';
+        qry = qry +   'grpitens.URI AS uri, grpitens.URIDET AS uridet ';
+        qry = qry + 'FROM grpitens ';
+        qry = qry + 'WHERE grpitens.CDEMPRESA = ' + cdempresa;
 
         const grpitens = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }

@@ -16,16 +16,16 @@ module.exports = {
         const { cdempresa, tp_analise } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT VDAS_DETALHE.ID AS id, VDAS_DETALHE.CDEMPRESA AS cdempresa, ';
-        qry = qry +   'VDAS_DETALHE.TP_ANALISE AS tp_analise, VDAS_DETALHE.DS_REGIAO AS ds_regiao, ';
-        qry = qry +   'VDAS_DETALHE.CD_CLI AS cd_cli, VDAS_DETALHE.LOJA_CLI AS loja_cli, VDAS_DETALHE.DS_CLI AS ds_cli, ';
-        qry = qry +   'VDAS_DETALHE.NR_DOCUMENTO AS nr_documento, VDAS_DETALHE.NAT_OPER AS nat_oper, VDAS_DETALHE.DT_EMISSAO AS dt_emissao, ';
-        qry = qry +   'VDAS_DETALHE.TP_DOCUM AS tp_docum, VDAS_DETALHE.VLR_DOCUM AS vlr_docum, ';
-        qry = qry +   'VDAS_DETALHE.DT_ANALISE AS dt_analise, VDAS_DETALHE.HR_ANALISE AS hr_analise ';
-        qry = qry + 'FROM VDAS_DETALHE ';
-        qry = qry + 'WHERE VDAS_DETALHE.CDEMPRESA = "' + cdempresa + '" ';
-        qry = qry +   'AND VDAS_DETALHE.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND VDAS_DETALHE.DS_REGIAO <> "' + tp_analise + '"';
+        qry = qry + 'SELECT vdas_detalhe.ID AS id, vdas_detalhe.CDEMPRESA AS cdempresa, ';
+        qry = qry +   'vdas_detalhe.TP_ANALISE AS tp_analise, vdas_detalhe.DS_REGIAO AS ds_regiao, ';
+        qry = qry +   'vdas_detalhe.CD_CLI AS cd_cli, vdas_detalhe.LOJA_CLI AS loja_cli, vdas_detalhe.DS_CLI AS ds_cli, ';
+        qry = qry +   'vdas_detalhe.NR_DOCUMENTO AS nr_documento, vdas_detalhe.NAT_OPER AS nat_oper, vdas_detalhe.DT_EMISSAO AS dt_emissao, ';
+        qry = qry +   'vdas_detalhe.TP_DOCUM AS tp_docum, vdas_detalhe.VLR_DOCUM AS vlr_docum, ';
+        qry = qry +   'vdas_detalhe.DT_ANALISE AS dt_analise, vdas_detalhe.HR_ANALISE AS hr_analise ';
+        qry = qry + 'FROM vdas_detalhe ';
+        qry = qry + 'WHERE vdas_detalhe.CDEMPRESA = "' + cdempresa + '" ';
+        qry = qry +   'AND vdas_detalhe.TP_ANALISE = "' + tp_analise + '" ';
+        qry = qry +   'AND vdas_detalhe.DS_REGIAO <> "' + tp_analise + '"';
 
         const vdas_detalhe = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }
@@ -39,16 +39,16 @@ module.exports = {
         const { cdempresa, tp_analise, ds_regiao } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT VDAS_DETALHE.ID AS id, VDAS_DETALHE.CDEMPRESA AS cdempresa, ';
-        qry = qry +   'VDAS_DETALHE.TP_ANALISE AS tp_analise, VDAS_DETALHE.DS_REGIAO AS ds_regiao, ';
-        qry = qry +   'VDAS_DETALHE.CD_CLI AS cd_cli, VDAS_DETALHE.LOJA_CLI AS loja_cli, VDAS_DETALHE.DS_CLI AS ds_cli, ';
-        qry = qry +   'VDAS_DETALHE.NR_DOCUMENTO AS nr_documento, VDAS_DETALHE.NAT_OPER AS nat_oper, VDAS_DETALHE.DT_EMISSAO AS dt_emissao, ';
-        qry = qry +   'VDAS_DETALHE.TP_DOCUM AS tp_docum, VDAS_DETALHE.VLR_DOCUM AS vlr_docum, ';
-        qry = qry +   'VDAS_DETALHE.DT_ANALISE AS dt_analise, VDAS_DETALHE.HR_ANALISE AS hr_analise ';
-        qry = qry + 'FROM VDAS_DETALHE ';
-        qry = qry + 'WHERE VDAS_DETALHE.CDEMPRESA = "' + cdempresa + '" ';
-        qry = qry +   'AND VDAS_DETALHE.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND VDAS_DETALHE.DS_REGIAO = "' + ds_regiao + '"';
+        qry = qry + 'SELECT vdas_detalhe.ID AS id, vdas_detalhe.CDEMPRESA AS cdempresa, ';
+        qry = qry +   'vdas_detalhe.TP_ANALISE AS tp_analise, vdas_detalhe.DS_REGIAO AS ds_regiao, ';
+        qry = qry +   'vdas_detalhe.CD_CLI AS cd_cli, vdas_detalhe.LOJA_CLI AS loja_cli, vdas_detalhe.DS_CLI AS ds_cli, ';
+        qry = qry +   'vdas_detalhe.NR_DOCUMENTO AS nr_documento, vdas_detalhe.NAT_OPER AS nat_oper, vdas_detalhe.DT_EMISSAO AS dt_emissao, ';
+        qry = qry +   'vdas_detalhe.TP_DOCUM AS tp_docum, vdas_detalhe.VLR_DOCUM AS vlr_docum, ';
+        qry = qry +   'vdas_detalhe.DT_ANALISE AS dt_analise, vdas_detalhe.HR_ANALISE AS hr_analise ';
+        qry = qry + 'FROM vdas_detalhe ';
+        qry = qry + 'WHERE vdas_detalhe.CDEMPRESA = "' + cdempresa + '" ';
+        qry = qry +   'AND vdas_detalhe.TP_ANALISE = "' + tp_analise + '" ';
+        qry = qry +   'AND vdas_detalhe.DS_REGIAO = "' + ds_regiao + '"';
 
         const vdas_detalhe = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }

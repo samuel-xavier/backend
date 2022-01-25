@@ -16,17 +16,17 @@ module.exports = {
         const { cdempresa, tp_analise, ds_regiao } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT PERFORM_REPR.ID AS id, PERFORM_REPR.CDEMPRESA AS cdempresa, ';
-        qry = qry +   'PERFORM_REPR.TP_ANALISE AS tp_analise, PERFORM_REPR.DS_REGIAO AS ds_regiao, ';
-        qry = qry +   'PERFORM_REPR.ANO_MES AS ano_mes, PERFORM_REPR.QT_CLI_ATEND AS qt_cli_atend, ';
-        qry = qry +   'PERFORM_REPR.VLR_META AS vlr_meta, PERFORM_REPR.VLR_FATURAM AS vlr_faturam, ';
-        qry = qry +   'PERFORM_REPR.EFI AS efi, ';
-        qry = qry +   'PERFORM_REPR.DT_ANALISE AS dt_analise, PERFORM_REPR.HR_ANALISE AS hr_analise ';
-        qry = qry + 'FROM PERFORM_REPR ';
-        qry = qry + 'WHERE PERFORM_REPR.CDEMPRESA = "' + cdempresa + '" ';
-        qry = qry +   'AND PERFORM_REPR.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND PERFORM_REPR.DS_REGIAO = "' + ds_regiao + '" ';
-        qry = qry + 'ORDER BY PERFORM_REPR.ANO_MES DESC';
+        qry = qry + 'SELECT perform_repr.ID AS id, perform_repr.CDEMPRESA AS cdempresa, ';
+        qry = qry +   'perform_repr.TP_ANALISE AS tp_analise, perform_repr.DS_REGIAO AS ds_regiao, ';
+        qry = qry +   'perform_repr.ANO_MES AS ano_mes, perform_repr.QT_CLI_ATEND AS qt_cli_atend, ';
+        qry = qry +   'perform_repr.VLR_META AS vlr_meta, perform_repr.VLR_FATURAM AS vlr_faturam, ';
+        qry = qry +   'perform_repr.EFI AS efi, ';
+        qry = qry +   'perform_repr.DT_ANALISE AS dt_analise, perform_repr.HR_ANALISE AS hr_analise ';
+        qry = qry + 'FROM perform_repr ';
+        qry = qry + 'WHERE perform_repr.CDEMPRESA = "' + cdempresa + '" ';
+        qry = qry +   'AND perform_repr.TP_ANALISE = "' + tp_analise + '" ';
+        qry = qry +   'AND perform_repr.DS_REGIAO = "' + ds_regiao + '" ';
+        qry = qry + 'ORDER BY perform_repr.ANO_MES DESC';
 
         const perform_repr = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }

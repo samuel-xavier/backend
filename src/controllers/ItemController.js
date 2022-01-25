@@ -16,11 +16,11 @@ module.exports = {
         const { cdempresa } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT ITENS.ID AS id, ITENS.CDEMPRESA AS cdempresa, ITENS.CDITEM AS cditem, ';
-        qry = qry +   'ITENS.DSITEM AS dsitem, ITENS.DSDETITEM AS dsdetitem, ITENS.CDGRPITEM AS cdgrpitem, ';
-        qry = qry +   'ITENS.PRCVDA AS prcvda, ITENS.URI AS uri, ITENS.URIDET AS uridet ';
-        qry = qry + 'FROM ITENS ';
-        qry = qry + 'WHERE ITENS.CDEMPRESA = ' + cdempresa;
+        qry = qry + 'SELECT itens.ID AS id, itens.CDEMPRESA AS cdempresa, itens.CDITEM AS cditem, ';
+        qry = qry +   'itens.DSITEM AS dsitem, itens.DSDETITEM AS dsdetitem, itens.CDGRPITEM AS cdgrpitem, ';
+        qry = qry +   'itens.PRCVDA AS prcvda, itens.URI AS uri, itens.URIDET AS uridet ';
+        qry = qry + 'FROM itens ';
+        qry = qry + 'WHERE itens.CDEMPRESA = ' + cdempresa;
 
         const itens = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }
@@ -34,12 +34,12 @@ module.exports = {
         const { cdempresa, cdgrpitem } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT ITENS.ID AS id, ITENS.CDEMPRESA AS cdempresa, ITENS.CDITEM AS cditem, ';
-        qry = qry +   'ITENS.DSITEM AS dsitem, ITENS.DSDETITEM AS dsdetitem, ITENS.CDGRPITEM AS cdgrpitem, ';
-        qry = qry +   'ITENS.PRCVDA AS prcvda, ITENS.URI AS uri, ITENS.URIDET AS uridet ';
-        qry = qry + 'FROM ITENS ';
-        qry = qry + 'WHERE ITENS.CDEMPRESA = ' + cdempresa + ' ';
-        qry = qry +   'AND ITENS.CDGRPITEM = ' + cdgrpitem;
+        qry = qry + 'SELECT itens.ID AS id, itens.CDEMPRESA AS cdempresa, itens.CDITEM AS cditem, ';
+        qry = qry +   'itens.DSITEM AS dsitem, itens.DSDETITEM AS dsdetitem, itens.CDGRPITEM AS cdgrpitem, ';
+        qry = qry +   'itens.PRCVDA AS prcvda, itens.URI AS uri, itens.URIDET AS uridet ';
+        qry = qry + 'FROM itens ';
+        qry = qry + 'WHERE itens.CDEMPRESA = ' + cdempresa + ' ';
+        qry = qry +   'AND itens.CDGRPITEM = ' + cdgrpitem;
 
         const itens = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }

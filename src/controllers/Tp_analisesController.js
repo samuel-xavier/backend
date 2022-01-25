@@ -16,11 +16,11 @@ module.exports = {
         const { cdempresa } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT TP_ANALISES.ID AS id, TP_ANALISES.CDEMPRESA AS cdempresa, ';
-        qry = qry +   'TP_ANALISES.TP_ANALISE AS tp_analise, TP_ANALISES.DS_ANALISE AS ds_analise, ';
-        qry = qry +   'TP_ANALISES.DT_ANALISE AS dt_analise, TP_ANALISES.HR_ANALISE AS hr_analise ';
-        qry = qry + 'FROM TP_ANALISES ';
-        qry = qry + 'WHERE TP_ANALISES.CDEMPRESA = ' + cdempresa;
+        qry = qry + 'SELECT tp_analises.ID AS id, tp_analises.CDEMPRESA AS cdempresa, ';
+        qry = qry +   'tp_analises.TP_ANALISE AS tp_analise, tp_analises.DS_ANALISE AS ds_analise, ';
+        qry = qry +   'tp_analises.DT_ANALISE AS dt_analise, tp_analises.HR_ANALISE AS hr_analise ';
+        qry = qry + 'FROM tp_analises ';
+        qry = qry + 'WHERE tp_analises.CDEMPRESA = ' + cdempresa;
 
         const tp_analises = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }

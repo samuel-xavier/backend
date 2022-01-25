@@ -16,10 +16,10 @@ module.exports = {
         const { cdempresa } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT empresa.id AS id, empresa.cdempresa AS cdempresa, empresa.dsempresa AS dsempresa, ';
-        qry = qry +   'empresa.uri AS uri, empresa.uridet AS uridet, empresa.logo AS logo ';
+        qry = qry + 'SELECT empresa.ID AS id, empresa.CDEMPRESA AS cdempresa, empresa.DSEMPRESA AS dsempresa, ';
+        qry = qry +   'empresa.URI AS uri, empresa.URIDET AS uridet, empresa.LOGO AS logo ';
         qry = qry + 'FROM empresa ';
-        qry = qry + 'WHERE empresa.cdempresa = ' + cdempresa;
+        qry = qry + 'WHERE empresa.CDEMPRESA = ' + cdempresa;
 
         const empresa = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }

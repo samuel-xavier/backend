@@ -16,15 +16,15 @@ module.exports = {
         const { cdempresa, tp_analise } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT ANALISE_VDAS.ID AS id, ANALISE_VDAS.CDEMPRESA AS cdempresa, ';
-        qry = qry +   'ANALISE_VDAS.TP_ANALISE AS tp_analise, ANALISE_VDAS.DS_REGIAO AS ds_regiao, ';
-        qry = qry +   'ANALISE_VDAS.MET_DIA AS met_dia, ANALISE_VDAS.VDA_DIA AS vda_dia, ANALISE_VDAS.EFI_DIA AS efi_dia, ';
-        qry = qry +   'ANALISE_VDAS.MET_ACU AS met_acu, ANALISE_VDAS.VDA_ACU AS vda_acu, ANALISE_VDAS.EFI_ACU AS efi_acu, ';
-        qry = qry +   'ANALISE_VDAS.DT_ANALISE AS dt_analise, ANALISE_VDAS.HR_ANALISE AS hr_analise ';
-        qry = qry + 'FROM ANALISE_VDAS ';
-        qry = qry + 'WHERE ANALISE_VDAS.CDEMPRESA = "' + cdempresa + '" ';
-        qry = qry +   'AND ANALISE_VDAS.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND ANALISE_VDAS.DS_REGIAO <> "' + tp_analise + '"';
+        qry = qry + 'SELECT analise_vdas.ID AS id, analise_vdas.CDEMPRESA AS cdempresa, ';
+        qry = qry +   'analise_vdas.TP_ANALISE AS tp_analise, analise_vdas.DS_REGIAO AS ds_regiao, ';
+        qry = qry +   'analise_vdas.MET_DIA AS met_dia, analise_vdas.VDA_DIA AS vda_dia, analise_vdas.EFI_DIA AS efi_dia, ';
+        qry = qry +   'analise_vdas.MET_ACU AS met_acu, analise_vdas.VDA_ACU AS vda_acu, analise_vdas.EFI_ACU AS efi_acu, ';
+        qry = qry +   'analise_vdas.DT_ANALISE AS dt_analise, analise_vdas.HR_ANALISE AS hr_analise ';
+        qry = qry + 'FROM analise_vdas ';
+        qry = qry + 'WHERE analise_vdas.CDEMPRESA = "' + cdempresa + '" ';
+        qry = qry +   'AND analise_vdas.TP_ANALISE = "' + tp_analise + '" ';
+        qry = qry +   'AND analise_vdas.DS_REGIAO <> "' + tp_analise + '"';
 
         const analise_vdas = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }
@@ -38,15 +38,15 @@ module.exports = {
         const { cdempresa, tp_analise, ds_regiao } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT ANALISE_VDAS.ID AS id, ANALISE_VDAS.CDEMPRESA AS cdempresa, ';
-        qry = qry +   'ANALISE_VDAS.TP_ANALISE AS tp_analise, ANALISE_VDAS.DS_REGIAO AS ds_regiao, ';
-        qry = qry +   'ANALISE_VDAS.MET_DIA AS met_dia, ANALISE_VDAS.VDA_DIA AS vda_dia, ANALISE_VDAS.EFI_DIA AS efi_dia, ';
-        qry = qry +   'ANALISE_VDAS.MET_ACU AS met_acu, ANALISE_VDAS.VDA_ACU AS vda_acu, ANALISE_VDAS.EFI_ACU AS efi_acu, ';
-        qry = qry +   'ANALISE_VDAS.DT_ANALISE AS dt_analise, ANALISE_VDAS.HR_ANALISE AS hr_analise ';
-        qry = qry + 'FROM ANALISE_VDAS ';
-        qry = qry + 'WHERE ANALISE_VDAS.CDEMPRESA = "' + cdempresa + '" ';
-        qry = qry +   'AND ANALISE_VDAS.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND ANALISE_VDAS.DS_REGIAO = "' + ds_regiao + '"';
+        qry = qry + 'SELECT analise_vdas.ID AS id, analise_vdas.CDEMPRESA AS cdempresa, ';
+        qry = qry +   'analise_vdas.TP_ANALISE AS tp_analise, analise_vdas.DS_REGIAO AS ds_regiao, ';
+        qry = qry +   'analise_vdas.MET_DIA AS met_dia, analise_vdas.VDA_DIA AS vda_dia, analise_vdas.EFI_DIA AS efi_dia, ';
+        qry = qry +   'analise_vdas.MET_ACU AS met_acu, analise_vdas.VDA_ACU AS vda_acu, analise_vdas.EFI_ACU AS efi_acu, ';
+        qry = qry +   'analise_vdas.DT_ANALISE AS dt_analise, analise_vdas.HR_ANALISE AS hr_analise ';
+        qry = qry + 'FROM analise_vdas ';
+        qry = qry + 'WHERE analise_vdas.CDEMPRESA = "' + cdempresa + '" ';
+        qry = qry +   'AND analise_vdas.TP_ANALISE = "' + tp_analise + '" ';
+        qry = qry +   'AND analise_vdas.DS_REGIAO = "' + ds_regiao + '"';
 
         const analise_vdas = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }

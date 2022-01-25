@@ -16,14 +16,14 @@ module.exports = {
         const { cdempresa, tp_analise, ds_regiao } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT DISTINCT HIST_FATURAMENTO.CDEMPRESA AS cdempresa, ';
-        qry = qry +   'HIST_FATURAMENTO.TP_ANALISE AS tp_analise, HIST_FATURAMENTO.DS_REGIAO AS ds_regiao, ';
-        qry = qry +   'HIST_FATURAMENTO.CNPJ AS cnpj,  HIST_FATURAMENTO.DS_CLI AS ds_cli ';
-        qry = qry + 'FROM HIST_FATURAMENTO ';
-        qry = qry + 'WHERE HIST_FATURAMENTO.CDEMPRESA = "' + cdempresa + '" ';
-        qry = qry +   'AND HIST_FATURAMENTO.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND HIST_FATURAMENTO.DS_REGIAO = "' + ds_regiao + '" ';
-        qry = qry + 'ORDER BY HIST_FATURAMENTO.DS_CLI';
+        qry = qry + 'SELECT DISTINCT hist_faturamento.CDEMPRESA AS cdempresa, ';
+        qry = qry +   'hist_faturamento.TP_ANALISE AS tp_analise, hist_faturamento.DS_REGIAO AS ds_regiao, ';
+        qry = qry +   'hist_faturamento.CNPJ AS cnpj,  hist_faturamento.DS_CLI AS ds_cli ';
+        qry = qry + 'FROM hist_faturamento ';
+        qry = qry + 'WHERE hist_faturamento.CDEMPRESA = "' + cdempresa + '" ';
+        qry = qry +   'AND hist_faturamento.TP_ANALISE = "' + tp_analise + '" ';
+        qry = qry +   'AND hist_faturamento.DS_REGIAO = "' + ds_regiao + '" ';
+        qry = qry + 'ORDER BY hist_faturamento.DS_CLI';
 
         const hist_faturamento = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }
@@ -37,17 +37,17 @@ module.exports = {
         const { cdempresa, tp_analise, ds_regiao, cnpj } = req.params;
 
         var qry = '';
-        qry = qry + 'SELECT HIST_FATURAMENTO.ID AS id, HIST_FATURAMENTO.CDEMPRESA AS cdempresa, ';
-        qry = qry +   'HIST_FATURAMENTO.TP_ANALISE AS tp_analise, HIST_FATURAMENTO.DS_REGIAO AS ds_regiao, ';
-        qry = qry +   'HIST_FATURAMENTO.CNPJ AS cnpj,  HIST_FATURAMENTO.DS_CLI AS ds_cli, ';
-        qry = qry +   'HIST_FATURAMENTO.ANO_MES AS ano_mes, HIST_FATURAMENTO.VLR_FATURAM AS vlr_faturam, ';
-        qry = qry +   'HIST_FATURAMENTO.DT_ANALISE AS dt_analise, HIST_FATURAMENTO.HR_ANALISE AS hr_analise ';
-        qry = qry + 'FROM HIST_FATURAMENTO ';
-        qry = qry + 'WHERE HIST_FATURAMENTO.CDEMPRESA = "' + cdempresa + '" ';
-        qry = qry +   'AND HIST_FATURAMENTO.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND HIST_FATURAMENTO.DS_REGIAO = "' + ds_regiao + '" ';    
-        qry = qry +   'AND HIST_FATURAMENTO.CNPJ = "' + cnpj + '" ';
-        qry = qry + 'ORDER BY HIST_FATURAMENTO.ANO_MES DESC';
+        qry = qry + 'SELECT hist_faturamento.ID AS id, hist_faturamento.CDEMPRESA AS cdempresa, ';
+        qry = qry +   'hist_faturamento.TP_ANALISE AS tp_analise, hist_faturamento.DS_REGIAO AS ds_regiao, ';
+        qry = qry +   'hist_faturamento.CNPJ AS cnpj,  hist_faturamento.DS_CLI AS ds_cli, ';
+        qry = qry +   'hist_faturamento.ANO_MES AS ano_mes, hist_faturamento.VLR_FATURAM AS vlr_faturam, ';
+        qry = qry +   'hist_faturamento.DT_ANALISE AS dt_analise, hist_faturamento.HR_ANALISE AS hr_analise ';
+        qry = qry + 'FROM hist_faturamento ';
+        qry = qry + 'WHERE hist_faturamento.CDEMPRESA = "' + cdempresa + '" ';
+        qry = qry +   'AND hist_faturamento.TP_ANALISE = "' + tp_analise + '" ';
+        qry = qry +   'AND hist_faturamento.DS_REGIAO = "' + ds_regiao + '" ';    
+        qry = qry +   'AND hist_faturamento.CNPJ = "' + cnpj + '" ';
+        qry = qry + 'ORDER BY hist_faturamento.ANO_MES DESC';
 
         const hist_faturamento = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }
