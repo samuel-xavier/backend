@@ -23,7 +23,8 @@ module.exports = {
         qry = qry + 'FROM analise_pedpend ';
         qry = qry + 'WHERE analise_pedpend.CDEMPRESA = "' + cdempresa + '" ';
         qry = qry +   'AND analise_pedpend.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND analise_pedpend.DS_REGIAO <> "' + tp_analise + '"';
+        qry = qry +   'AND analise_pedpend.DS_REGIAO <> "' + tp_analise + '" ';
+        qry = qry + 'ORDER BY analise_pedpend.CLASSIF';
 
         const analise_pedpend = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }
@@ -44,7 +45,8 @@ module.exports = {
         qry = qry + 'FROM analise_pedpend ';
         qry = qry + 'WHERE analise_pedpend.CDEMPRESA = "' + cdempresa + '" ';
         qry = qry +   'AND analise_pedpend.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND analise_pedpend.DS_REGIAO = "' + ds_regiao + '"';
+        qry = qry +   'AND analise_pedpend.DS_REGIAO = "' + ds_regiao + '" ';
+        qry = qry + 'ORDER BY analise_pedpend.CLASSIF';
 
         const analise_pedpend = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }

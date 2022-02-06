@@ -48,7 +48,8 @@ module.exports = {
         qry = qry + 'FROM vdas_detalhe ';
         qry = qry + 'WHERE vdas_detalhe.CDEMPRESA = "' + cdempresa + '" ';
         qry = qry +   'AND vdas_detalhe.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND vdas_detalhe.DS_REGIAO = "' + ds_regiao + '"';
+        qry = qry +   'AND vdas_detalhe.DS_REGIAO = "' + ds_regiao + '" ';
+        qry = qry + 'ORDER BY vdas_detalhe.DT_EMISSAO, vdas_detalhe.DS_CLI';
 
         const vdas_detalhe = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }

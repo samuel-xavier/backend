@@ -24,7 +24,8 @@ module.exports = {
         qry = qry + 'FROM analise_vdas ';
         qry = qry + 'WHERE analise_vdas.CDEMPRESA = "' + cdempresa + '" ';
         qry = qry +   'AND analise_vdas.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND analise_vdas.DS_REGIAO <> "' + tp_analise + '"';
+        qry = qry +   'AND analise_vdas.DS_REGIAO <> "' + tp_analise + '" ';
+        qry = qry + 'ORDER BY analise_vdas.EFI_ACU DESC';
 
         const analise_vdas = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }
@@ -46,7 +47,8 @@ module.exports = {
         qry = qry + 'FROM analise_vdas ';
         qry = qry + 'WHERE analise_vdas.CDEMPRESA = "' + cdempresa + '" ';
         qry = qry +   'AND analise_vdas.TP_ANALISE = "' + tp_analise + '" ';
-        qry = qry +   'AND analise_vdas.DS_REGIAO = "' + ds_regiao + '"';
+        qry = qry +   'AND analise_vdas.DS_REGIAO = "' + ds_regiao + '" ';
+        qry = qry + 'ORDER BY analise_vdas.EFI_ACU DESC';
 
         const analise_vdas = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }
