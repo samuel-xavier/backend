@@ -48,6 +48,7 @@ routes.put('/analise_pedpend/:analise_pedpend_id', Analise_pedpendController.upd
 
 routes.get('/tp_analises', Tp_analisesController.index);
 routes.get('/tp_analises/:cdempresa', Tp_analisesController.index_empresa);
+routes.get('/tp_analises/:cdempresa/:perfil', Tp_analisesController.index_perfil);
 routes.post('/tp_analises', Tp_analisesController.store);
 routes.delete('/tp_analises/:tp_analise_id', Tp_analisesController.delete);
 routes.put('/tp_analises/:tp_analise_id', Tp_analisesController.update);
