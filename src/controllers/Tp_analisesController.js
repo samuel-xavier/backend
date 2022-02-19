@@ -38,8 +38,8 @@ module.exports = {
         qry = qry +   'tp_analises.TP_ANALISE AS tp_analise, tp_analises.DS_ANALISE AS ds_analise, ';
         qry = qry +   'tp_analises.DT_ANALISE AS dt_analise, tp_analises.HR_ANALISE AS hr_analise ';
         qry = qry + 'FROM tp_analises ';
-        qry = qry + 'WHERE tp_analises.CDEMPRESA = ' + cdempresa + '" ';
-        qry = qry +   'AND tp_analises.TP_ANALISE = ' + perfil;
+        qry = qry + 'WHERE tp_analises.CDEMPRESA = "' + cdempresa + '" ';
+        qry = qry +   'AND tp_analises.TP_ANALISE = "' + perfil + '"';
 
         const tp_analises = await connection.query( qry,
             { type: Sequelize.QueryTypes.SELECT }
