@@ -68,8 +68,8 @@ routes.delete('/vdas_detalhe/:vdas_detalhe_id', Vdas_detalheController.delete);
 routes.put('/vdas_detalhe/:vdas_detalhe_id', Vdas_detalheController.update);
 
 routes.get('/hist_faturamento', Hist_faturamentoController.index);
-routes.get('/hist_faturamento/:cdempresa/:tp_analise/:ds_regiao', Hist_faturamentoController.index_clientes_regiao);
-routes.get('/hist_faturamento/:cdempresa/:tp_analise/:ds_regiao/:cnpj', Hist_faturamentoController.index_cnpj);
+routes.get('/hist_faturamento/:cdempresa/:tp_analise/:ds_regiao/:tp_consulta', Hist_faturamentoController.index_clientes_ou_cidades_regiao);
+routes.get('/hist_faturamento/:cdempresa/:tp_analise/:ds_regiao/:tp_consulta/:chave01', Hist_faturamentoController.index_clientes_05);
 routes.post('/hist_faturamento', Hist_faturamentoController.store);
 routes.delete('/hist_faturamento/:hist_faturamento_id', Hist_faturamentoController.delete);
 routes.put('/hist_faturamento/:hist_faturamento_id', Hist_faturamentoController.update);

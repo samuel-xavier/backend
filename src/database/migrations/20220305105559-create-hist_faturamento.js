@@ -31,6 +31,10 @@ module.exports = {
         type: Sequelize.STRING(60),
         allowNull: false,
       },
+      uf_cidade: {
+        type: Sequelize.STRING(30),
+        allowNull: false,
+      },
       ano_mes: {
         type: Sequelize.STRING(6),
         allowNull: false,

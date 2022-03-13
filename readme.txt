@@ -75,3 +75,11 @@ Para rodar:
 Para testar:
 - na web: http://localhost:3333/itens 
 - insomnia: similar a consulta acima
+
+********
+Para alterar uma tabela existente:
+- copiar o arquivo create-nomedatabela da pasta \database\migrations\
+- excluir o arquivo create-nomedatabela da pasta \database\migrations\
+- excluir a tabela do banco de dados
+- excluir a linha relacionada a tabela da tabela sequelizemeta (banco de dados)
+- repetir os passos 14b em diante

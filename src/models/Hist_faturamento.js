@@ -8,6 +8,7 @@ class Hist_faturamento extends Model {
             ds_regiao: DataTypes.STRING(30),
             cnpj: DataTypes.STRING(20),
             ds_cli: DataTypes.STRING(60),
+            uf_cidade: DataTypes.STRING(30),
             ano_mes: DataTypes.STRING(6),
             vlr_faturam: DataTypes.INTEGER,
             dt_analise: DataTypes.STRING(8),
